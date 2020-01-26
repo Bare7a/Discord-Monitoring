@@ -27,8 +27,7 @@ class DiscordHelper {
 
     async createChannel(channelName, category) {
         channelName = channelName.toLowerCase();
-        const channel = await this.server.createChannel(channelName, { type: 'text' });
-        channel.setParent(category.id)
+        const channel = await this.server.createChannel(channelName, { type: 'text', parent: category.id });
         return channel;
     }
 
